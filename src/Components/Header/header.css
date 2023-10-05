@@ -17,13 +17,18 @@ header {
 header a {
     margin: 0 10px;
     color: #5a6f08;
+    text-decoration: underline;
+    text-decoration-color: white;
     text-decoration: none;
+    text-underline-offset: 0px;
+    transition: all ease-in-out 450ms;
 }
 header a:hover {
     margin: 0 10px;
     text-decoration: underline;
     text-decoration-color: #93ad18;
     text-underline-offset: 10px;
+    transition: all ease-in-out 450ms;
 }
 
 .logo {
@@ -54,4 +59,8 @@ main {
 
 .text-center {
     text-align: center;
+}
+
+main {
+    margin-bottom: 30px;
 }
