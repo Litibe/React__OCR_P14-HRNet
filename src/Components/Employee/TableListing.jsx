@@ -1,3 +1,4 @@
+import ImportExportEmployees from "./Import";
 import "./table.css";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,7 +9,7 @@ export default function TableListing() {
 
     return (
         <div>
-            <table>
+            <table id="my-employees">
                 <thead>
                     <tr id="td-header">
                         <td>First Name</td>
@@ -27,7 +28,6 @@ export default function TableListing() {
                         <>
                             {employees.map((employee, index) => (
                                 <>
-                                    {console.log(employee)}
                                     {
                                         <tr key={index}>
                                             <td>{employee.firstName}</td>
@@ -51,6 +51,9 @@ export default function TableListing() {
                     )}
                 </tbody>
             </table>
+            <div className="mx-auto mt-4">
+                <ImportExportEmployees />
+            </div>
         </div>
     );
 }

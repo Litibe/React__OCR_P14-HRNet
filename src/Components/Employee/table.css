@@ -37,3 +37,10 @@ tr:nth-child(even) td {
 tr:nth-child(odd) td {
     background-color: rgb(245, 245, 245);
 }
+
+#file-input {
+    display: none;
+}
+.mt-4 {
+    margin-top: 40px;
+}

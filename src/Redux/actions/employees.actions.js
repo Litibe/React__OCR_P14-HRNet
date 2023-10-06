@@ -11,3 +11,13 @@ export const AddNewEmploye = (formData) => {
         });
     };
 };
+
+export const loadJsonEmployees = (dataJson) => {
+    return async (dispatch) => {
+        const json = JSON.parse(dataJson);
+        return dispatch({
+            type: "LOAD_JSON_EMPLOYEES",
+            employees: json.employees,
+        });
+    };
+};

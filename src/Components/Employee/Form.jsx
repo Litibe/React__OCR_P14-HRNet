@@ -22,11 +22,15 @@ export default function FormEployee() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    useEffect(() => {
-        dispatch(integrateDataState());
-        dispatch(integrateDataDepartments());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const handleClickScroll = () => {
+        setTimeout(() => {
+            const element = document.getElementById("linkListEmployees");
+            if (element) {
+                // 👇 Will scroll smoothly to the top of the next section
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 1000);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -51,6 +55,7 @@ export default function FormEployee() {
         formData.append("state", document.getElementById("state").innerText);
         formData.append("street", document.getElementById("street").value);
         formData.append("zipCode", document.getElementById("zipCode").value);
+        handleClickScroll();
         dispatch(openModal());
         dispatch(AddNewEmploye(formData));
         setSendClicked(true);

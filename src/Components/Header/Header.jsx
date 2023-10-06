@@ -5,9 +5,10 @@ export default function Header() {
     return (
         <header>
             <img src={logo} alt="Logo - HrNet" className="logo" />
-
             <Link to="/create">Create Employee</Link>
-            <Link to="/list">List Employees</Link>
+            <Link to="/list" id={"linkListEmployees"}>
+                List Employees
+            </Link>
         </header>
     );
 }
