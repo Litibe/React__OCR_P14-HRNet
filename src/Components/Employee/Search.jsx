@@ -39,6 +39,7 @@ export default function Search() {
                     aria-controls="employee-table"
                     onChange={(e) => dispatch(searchWord(e.target.value))}
                     className="ms-1"
+                    defaultValue={search}
                 />
             </label>
         </div>

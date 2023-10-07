@@ -53,6 +53,7 @@ export default function FormEmployee() {
             document.getElementById("department").innerText
         );
         formData.append("state", document.getElementById("state").innerText);
+        formData.append("city", document.getElementById("city").value);
         formData.append("street", document.getElementById("street").value);
         formData.append("zipCode", document.getElementById("zipCode").value);
         handleClickScroll();
@@ -144,7 +145,7 @@ export default function FormEmployee() {
                                 dataArray={dataStates}
                                 keyToWatch={"name"}
                                 keyToValue={"abbreviation"}
-                                keyToValueDefaultValue={"FL"}
+                                //keyToValueDefaultValue={"FL"}
                             />
 
                             <div className="form-group">
@@ -180,7 +181,7 @@ export default function FormEmployee() {
                     <div className="mx-auto">Employee Saved</div>
                 )}
             </form>
-            <Modal text={"Employee Created !"} />
+            <Modal text={"Employee Created !"} link={"list"} />
         </>
     );
 }
