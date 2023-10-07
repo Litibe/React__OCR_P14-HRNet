@@ -1,16 +1,14 @@
 import {
     createBrowserRouter,
     createRoutesFromElements,
-    useNavigate,
     Route,
-    Outlet,
 } from "react-router-dom";
-import { useEffect, useContext } from "react";
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import PageError from "../Pages/404";
 import EmployeeCreate from "../Pages/EmployeeCreate";
 import EmployeeList from "../Pages/EmployeeList";
+import Welcome from "../Pages/Welcome";
 
 export default function Router() {
     const router = createBrowserRouter(
@@ -23,7 +21,7 @@ export default function Router() {
                         element={
                             <>
                                 <Header />
-
+                                <Welcome />
                                 <Footer />
                             </>
                         }

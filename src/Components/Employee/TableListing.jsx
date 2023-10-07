@@ -2,22 +2,25 @@
 import IconToSort from "./IconToSort";
 import ImportExportEmployees from "./Import";
 import NmberShow from "./NmberShow";
+import Search from "./Search";
 import Showing from "./Showing";
 import "./table.css";
 import { useSelector } from "react-redux";
 
 export default function TableListing() {
-    const sortedEmployees = useSelector(
-        (state) => state.factoryEmployees.sortedEmployees
-    );
     const chunckEmployees = useSelector(
         (state) => state.factoryEmployees.chunck
     );
 
     const current = useSelector((state) => state.factoryEmployees.current);
+
     return (
         <div>
-            <NmberShow />
+            <div className="pagination">
+                <NmberShow />
+                <Search />
+            </div>
+
             <table id="my-employees">
                 <thead>
                     <tr id="td-header">

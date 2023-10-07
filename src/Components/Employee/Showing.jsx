@@ -37,7 +37,6 @@ export default function Showing() {
                                     <BsFillSkipStartBtnFill className="icon-pointer-disabled" />
                                 )}
                                 <span>{current + 1}</span>
-                                {console.log(chunckEmployees.length)}
                                 {current + 1 < chunckEmployees.length ? (
                                     <BsSkipEndBtnFill
                                         className="icon-pointer"

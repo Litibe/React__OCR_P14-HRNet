@@ -18,11 +18,6 @@ export default function NmberShow() {
         dispatch(sortEmployees(employees, "AZ", "firstName"));
     }, [employees]);
 
-    useEffect(() => {
-        if (sortedEmployees !== undefined) {
-            dispatch(chunckEmployees(sortedEmployees, show));
-        }
-    }, [sortedEmployees, show]);
     const [arrayNmber] = useState([1, 2, 10, 25, 50, 100]);
     return (
         <>

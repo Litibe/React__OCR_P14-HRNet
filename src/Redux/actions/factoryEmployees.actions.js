@@ -1,3 +1,5 @@
+import findTraverse from "../../Utils/findTraverse";
+
 export const sortEmployees = (employees, sort, key) => {
     return async (dispatch) => {
         const sortedEmployees = [...employees];
@@ -47,5 +49,37 @@ export const chunckEmployees = (sortEmployees, number) => {
             type: "CHUNCK_EMPLOYEES",
             chunck: chunks,
         });
+    };
+};
+
+export const searchWord = (search) => {
+    return async (dispatch) => {
+        return dispatch({
+            type: "SEARCH_WORD",
+            search: search,
+        });
+    };
+};
+
+export const searchEmployees = (sortEmployees, search) => {
+    return async (dispatch) => {
+        const sortedEmployees = [...sortEmployees];
+        if (search !== "") {
+            let searched = [];
+            sortedEmployees.map((element) => {
+                if (findTraverse(element, search) === true) {
+                    searched.push(element);
+                }
+            });
+            return dispatch({
+                type: "SEARCHED_EMPLOYEES",
+                searched: searched,
+            });
+        } else {
+            return dispatch({
+                type: "SEARCHED_EMPLOYEES",
+                searched: sortedEmployees,
+            });
+        }
     };
 };
