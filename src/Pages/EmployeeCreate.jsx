@@ -1,4 +1,4 @@
-import FormEployee from "../Components/Employee/Form";
+import FormEmployee from "../Components/Employee/Form";
 
 export default function EmployeeCreate() {
     document.title = "HrNet - Create new Employee";
@@ -7,7 +7,7 @@ export default function EmployeeCreate() {
         <main>
             <h1>HrNet</h1>
             <h2>Create Employee</h2>
-            <FormEployee />
+            <FormEmployee />
         </main>
     );
 }

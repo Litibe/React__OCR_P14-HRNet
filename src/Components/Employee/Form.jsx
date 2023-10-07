@@ -10,7 +10,7 @@ import { AddNewEmploye } from "../../Redux/actions/employees.actions";
 import Modal from "../Pluging/Modal";
 import { openModal } from "../../Redux/actions/style.action";
 
-export default function FormEployee() {
+export default function FormEmployee() {
     const dataStates = useSelector((state) => state.data.states);
     const dataDepartments = useSelector((state) => state.data.departments);
 
@@ -172,7 +172,7 @@ export default function FormEployee() {
                 </div>
                 {sendClicked === false ? (
                     <div className="mx-auto">
-                        <button className="button_send" type="submit">
+                        <button className="button-action" type="submit">
                             Save
                         </button>
                     </div>

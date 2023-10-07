@@ -1,47 +1,79 @@
+/* eslint-disable array-callback-return */
+import IconToSort from "./IconToSort";
 import ImportExportEmployees from "./Import";
+import NmberShow from "./NmberShow";
+import Showing from "./Showing";
 import "./table.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function TableListing() {
-    const employees = useSelector((state) => state.employees);
+    const sortedEmployees = useSelector(
+        (state) => state.factoryEmployees.sortedEmployees
+    );
+    const chunckEmployees = useSelector(
+        (state) => state.factoryEmployees.chunck
+    );
 
-    console.log(employees);
-
+    const current = useSelector((state) => state.factoryEmployees.current);
     return (
         <div>
+            <NmberShow />
             <table id="my-employees">
                 <thead>
                     <tr id="td-header">
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>Start Date</td>
-                        <td>Department</td>
-                        <td>Date of Birth</td>
-                        <td>Street</td>
-                        <td>City</td>
-                        <td>State</td>
-                        <td>Zip Code</td>
+                        <td>
+                            First Name <IconToSort />
+                        </td>
+                        <td>
+                            Last Name <IconToSort />
+                        </td>
+                        <td>
+                            Start Date
+                            <IconToSort />
+                        </td>
+                        <td>
+                            Department
+                            <IconToSort />
+                        </td>
+                        <td>
+                            Date of Birth
+                            <IconToSort />
+                        </td>
+                        <td>
+                            Street
+                            <IconToSort />
+                        </td>
+                        <td>
+                            City
+                            <IconToSort />
+                        </td>
+                        <td>
+                            State
+                            <IconToSort />
+                        </td>
+                        <td>
+                            Zip Code
+                            <IconToSort />
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
-                    {employees !== undefined && employees.length >= 1 ? (
+                    {current !== undefined &&
+                    chunckEmployees !== undefined &&
+                    chunckEmployees.length >= 1 ? (
                         <>
-                            {employees.map((employee, index) => (
-                                <>
-                                    {
-                                        <tr key={index}>
-                                            <td>{employee.firstName}</td>
-                                            <td>{employee.lastName}</td>
-                                            <td>{employee.startDate}</td>
-                                            <td>{employee.department}</td>
-                                            <td>{employee.dateOfBirth}</td>
-                                            <td>{employee.street}</td>
-                                            <td>{employee.city}</td>
-                                            <td>{employee.state}</td>
-                                            <td>{employee.zipCode}</td>
-                                        </tr>
-                                    }
-                                </>
+                            {chunckEmployees[current].map((employee, index) => (
+                                <tr key={index}>
+                                    <td>{employee.firstName}</td>
+                                    <td>{employee.lastName}</td>
+                                    <td>{employee.startDate}</td>
+                                    <td>{employee.department}</td>
+                                    <td>{employee.dateOfBirth}</td>
+                                    <td>{employee.street}</td>
+                                    <td>{employee.city}</td>
+                                    <td>{employee.state}</td>
+                                    <td>{employee.zipCode}</td>
+                                </tr>
                             ))}
                         </>
                     ) : (
@@ -51,6 +83,8 @@ export default function TableListing() {
                     )}
                 </tbody>
             </table>
+            <Showing />
+
             <div className="mx-auto mt-4">
                 <ImportExportEmployees />
             </div>

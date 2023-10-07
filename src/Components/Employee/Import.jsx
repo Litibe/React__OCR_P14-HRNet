@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadJsonEmployees } from "../../Redux/actions/employees.actions";
+import camelCase from "../../Utils/camelCase";
 
 export default function ImportExportEmployees() {
     const dispatch = useDispatch();
+    const employees = useSelector((state) => state.employees);
     const handleUploadFiles = (files) => {
         files.some((file) => {
             const fileReader = new FileReader();
@@ -22,16 +23,7 @@ export default function ImportExportEmployees() {
         const chosenFiles = Array.prototype.slice.call(e.target.files);
         handleUploadFiles(chosenFiles);
     };
-    function camelCase(str) {
-        return str
-            .replace(/\s(.)/g, function (a) {
-                return a.toUpperCase();
-            })
-            .replace(/\s/g, "")
-            .replace(/^(.)/, function (b) {
-                return b.toLowerCase();
-            });
-    }
+
     function toArrayOfObjects(table) {
         try {
             const thead = Array.from(table.tHead.rows[0].children).map(
@@ -74,14 +66,20 @@ export default function ImportExportEmployees() {
                 multiple
             />
 
-            <button>
+            <button className="button-action">
                 <label id="file-input-label" htmlFor="file-input">
                     Import
                 </label>
             </button>
-            <button className="button_send" onClick={exportData}>
-                Export
-            </button>
+            {employees !== undefined && (
+                <>
+                    {employees.length > 0 && (
+                        <button className="button-action" onClick={exportData}>
+                            Export
+                        </button>
+                    )}
+                </>
+            )}
         </>
     );
 }
