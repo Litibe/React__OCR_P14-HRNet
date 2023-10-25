@@ -1,4 +1,4 @@
-const initialState = { show: 1, current: 0, search: "" };
+const initialState = { show: 10, current: 0, search: "" };
 
 export default function factoryEmployees(state = initialState, action) {
     switch (action.type) {
