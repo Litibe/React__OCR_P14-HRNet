@@ -28,3 +28,5 @@ Ensuite :
 
 ` npm start ` pour lancer react.
 
+### Modification des DATAS
+Est présents dans le dossier public, un dossier Data permettant l'intégration de données dans les DropDown Menu et un fichier json d'exemple pour importer des données dans le tableau.
