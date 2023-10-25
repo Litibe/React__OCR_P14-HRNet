@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     sortEmployees,
     showEmployees,
-    chunckEmployees,
 } from "../../Redux/actions/factoryEmployees.actions";
 import { useEffect, useState } from "react";
 
@@ -18,7 +17,7 @@ export default function NmberShow() {
         dispatch(sortEmployees(employees, "AZ", "firstName"));
     }, [employees]);
 
-    const [arrayNmber] = useState([1, 2, 10, 25, 50, 100]);
+    const [arrayNmber] = useState([10, 25, 50, 100]);
     return (
         <>
             {sortedEmployees !== undefined && (

@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import findTraverse from "../../Utils/findTraverse";
 
 export const sortEmployees = (employees, sort, key) => {

@@ -1,5 +1,5 @@
 export const AddNewEmploye = (formData) => {
-    // formData for future FETCH API Into request POST
+    // formData for future FETCH API Into request GET
     return async (dispatch) => {
         var object = {};
         formData.forEach(function (value, key) {

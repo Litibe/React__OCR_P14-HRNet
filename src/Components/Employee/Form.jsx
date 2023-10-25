@@ -64,7 +64,7 @@ export default function FormEmployee() {
 
     return (
         <>
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form data-testid="form" onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <fieldset>
                         <legend>Identity :</legend>
@@ -76,6 +76,7 @@ export default function FormEmployee() {
                                     type="text"
                                     name="firstName"
                                     id="firstName"
+                                    data-testid="firstName"
                                     className="form-control"
                                     placeholder="John"
                                     maxLength={300}
@@ -87,6 +88,7 @@ export default function FormEmployee() {
                                     type="text"
                                     name="lastName"
                                     id="lastName"
+                                    data-testid="lastName"
                                     className="form-control"
                                     placeholder="Doe"
                                     maxLength={300}
@@ -100,6 +102,7 @@ export default function FormEmployee() {
                                     type="date"
                                     name="dateOfBirth"
                                     id="dateOfBirth"
+                                    data-testid="dateOfBirth"
                                     className="form-control"
                                 />
                             </div>
@@ -109,6 +112,7 @@ export default function FormEmployee() {
                                     type="date"
                                     name="startDate"
                                     id="startDate"
+                                    data-testid="startDate"
                                     className="form-control"
                                 />
                             </div>
@@ -124,6 +128,7 @@ export default function FormEmployee() {
                                     type="text"
                                     name="street"
                                     id="street"
+                                    data-testid="street"
                                     className="form-control"
                                     maxLength={300}
                                 />
@@ -134,6 +139,7 @@ export default function FormEmployee() {
                                     type="text"
                                     name="city"
                                     id="city"
+                                    data-testid="city"
                                     maxLength={300}
                                 />
                             </div>
@@ -141,11 +147,12 @@ export default function FormEmployee() {
                             <DropDownSelect
                                 className={"form-group"}
                                 id={"state"}
+                                data-testid="state"
                                 title={"State"}
                                 dataArray={dataStates}
                                 keyToWatch={"name"}
                                 keyToValue={"abbreviation"}
-                                //keyToValueDefaultValue={"FL"}
+                                keyToValueDefaultValue={"AL"}
                             />
 
                             <div className="form-group">
@@ -154,16 +161,19 @@ export default function FormEmployee() {
                                     type="text"
                                     name="zipCode"
                                     id="zipCode"
+                                    data-testid="zipCode"
                                     className="form-control"
                                 />
                             </div>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend>Department</legend>
+                        <legend>Job</legend>
                         <DropDownSelect
                             className={"form-group"}
                             id={"department"}
+                            title={"Department"}
+                            data-testid="departement"
                             dataArray={dataDepartments}
                             keyToWatch={"name"}
                             keyToValue={"value"}
@@ -173,7 +183,11 @@ export default function FormEmployee() {
                 </div>
                 {sendClicked === false ? (
                     <div className="mx-auto">
-                        <button className="button-action" type="submit">
+                        <button
+                            className="button-action"
+                            type="submit"
+                            data-testid="btn-submit"
+                        >
                             Save
                         </button>
                     </div>

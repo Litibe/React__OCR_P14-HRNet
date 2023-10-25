@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -40,6 +41,8 @@ export default function Search() {
                     onChange={(e) => dispatch(searchWord(e.target.value))}
                     className="ms-1"
                     defaultValue={search}
+                    name="searchWord"
+                    id="searchWord"
                 />
             </label>
         </div>

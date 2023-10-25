@@ -13,7 +13,7 @@ const router = Router();
 
 const store = configureStore({
     reducer: rootReducer,
-    devTools: true,
+    devTools: false,
 });
 
 root.render(
