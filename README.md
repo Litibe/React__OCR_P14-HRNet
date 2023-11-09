@@ -21,8 +21,14 @@ Puis lancer le live server. Le chargement ouvrivra l'ancienne version HRnet sur 
 `http://localhost:5500 `
 
 ### Lancement projet React
-Ouvrer un terminal dans le dossier source du projet git et être positionné sur la branche "react" du projet.
+Vous devez avoir au préalable NodeJs sur votre machine (https://nodejs.org/en/download/) et git (https://git-scm.com/downloads)
+Ouvrer un terminal dans le dossier de votre choix
 Ensuite : 
+`git clone https://github.com/Litibe/React__OCR_P14-HRNet.git` pour cloner
+
+`cd React__OCR_P14-HRNet` pour aller dans le dossier du projet
+
+`git checkout react` pour aller sur la branche contenant le projet sous React.
 
 ` npm i ` pour installer les dépendances nécesssaires au dossier (uniquement pour le fonctionnement de réact, pas de librairie extérieur utilisée)
 
