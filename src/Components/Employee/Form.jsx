@@ -104,6 +104,8 @@ export default function FormEmployee() {
                                     id="dateOfBirth"
                                     data-testid="dateOfBirth"
                                     className="form-control"
+                                    min="1933-01-01"
+                                    max={new Date().toISOString().split("T")[0]}
                                 />
                             </div>
                             <div className="form-group">
